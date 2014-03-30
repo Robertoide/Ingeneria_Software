@@ -10,7 +10,7 @@ using namespace std;
 
 string QuitarTildes(string cadena)
 {
-    string vocal_sin="aaaaaaeeeeiiiioooouuuc",vocal_con="габдвийлкмнпотуцфщъьыз";
+    string vocal_sin="aaaaaaeeeeiiiioooouuuc",vocal_con="пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
     int i,j;
     for (i=0;i<cadena.size();i++)
         for (j=0;j<22;j++)
@@ -70,7 +70,7 @@ string Saca_Comillas(string palabra){
     palabra = palabra.substr(desde,hasta);
     return palabra;
 }
-/* Saca */
+/* Saca el ingreso de cada linea y lo suma, de todas las tiendas */
 void Total_Ingresos(string archivo)
 {
      long TotalIngre =0,Ingreso;
@@ -96,6 +96,7 @@ void Total_Ingresos(string archivo)
      cout<<"Las ventas totales de las empresas son: " ;
      cout<<TotalIngre;
 }
+/* Valida la existencia de la tienda*/
 bool Existe(string palabra)
 {
     int i;
@@ -113,6 +114,7 @@ bool Existe(string palabra)
     }
     return false;
 }
+/* Saca los ingresos totales por MES de la tienda q se solicite*/
 void Ingr_Mens(string palabra, string archivo)
 {
      long IngrMen[12];
@@ -137,6 +139,8 @@ void Ingr_Mens(string palabra, string archivo)
         IngrMen[i]=0;
      }
      string TiendaIngresada = QuitarTildes(Estandarizar(palabra));
+     /* Comprueba q exista la tienda, para buscarla luego en el fichero,
+     en caso contrario se salta este trozo de codigo*/
      if(Existe(TiendaIngresada)==true)
      {
         ifstream leer_fich(archivo.c_str());
@@ -148,6 +152,8 @@ void Ingr_Mens(string palabra, string archivo)
         {
             /*extraer los tres datos y limpiarlos*/
             getline(leer_fich,str);
+            /*mienteas la linea extraida siga teniendo datos, es decir sea diferente
+            a vacio, continuara el proceso*/
             if(str!="")
             {
                 datos=Split(str,delimitador);
@@ -164,6 +170,7 @@ void Ingr_Mens(string palabra, string archivo)
                     }
             }
         }
+        /* Mostramos por pantalla los resultados obtenidos por la tienda mes a mes*/
         cout<<"Las ventas mensuales de la tienda "<<TiendaIngresada<<" son:"<<endl<<endl;
         for(i=0;i<12;i++)
         {
@@ -200,8 +207,8 @@ int main(int argc, char *argv[])
                     {
                         cout << "Integrantes Ing. Software" << endl;
                         cout << "Diego Hernandez Garcia" << endl;
-                        cout << "Miguel Nuсez Gajardo" << endl;
-                        cout << "Roberto Oсate Piedras" << endl;
+                        cout << "Miguel NuпїЅez Gajardo" << endl;
+                        cout << "Roberto OпїЅate Piedras" << endl;
                         cout << "Fecha de compilacion: " << __DATE__ << " " << __TIME__ << endl;
                     }else
                         cout<<"Mal ingresada la cantidad de parametros"<<endl;
