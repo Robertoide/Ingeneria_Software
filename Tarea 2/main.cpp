@@ -7,10 +7,10 @@
 #include <cstdlib>
 
 using namespace std;
-
+//pruebaaaaaa
 string QuitarTildes(string cadena)
 {
-    string vocal_sin="aaaaaaeeeeiiiioooouuuc",vocal_con="габдвийлкмнпотуцфщъьыз";
+    string vocal_sin="aaaaaaeeeeiiiioooouuuc",vocal_con="пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
     int i,j;
     for (i=0;i<cadena.size();i++)
         for (j=0;j<22;j++)
@@ -200,8 +200,8 @@ int main(int argc, char *argv[])
                     {
                         cout << "Integrantes Ing. Software" << endl;
                         cout << "Diego Hernandez Garcia" << endl;
-                        cout << "Miguel Nuсez Gajardo" << endl;
-                        cout << "Roberto Oсate Piedras" << endl;
+                        cout << "Miguel NuпїЅez Gajardo" << endl;
+                        cout << "Roberto OпїЅate Piedras" << endl;
                         cout << "Fecha de compilacion: " << __DATE__ << " " << __TIME__ << endl;
                     }else
                         cout<<"Mal ingresada la cantidad de parametros"<<endl;
